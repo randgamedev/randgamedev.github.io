@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PBS 2D — RandGameDev</title>
-<meta name="description" content="PBS 2D is a physics-based 2D character template for Unity, featuring active ragdoll, procedural locomotion, and a modular weapon system." />
+<title>RandGameDev — Indie Unity Developer</title>
+<meta name="description" content="Portfolio of RandGameDev — an indie Unity developer from Portugal building 2D games and frameworks as a hobby." />
 <meta name="color-scheme" content="dark" />
 
 <style>
@@ -75,9 +75,7 @@
     font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--text);
-    border-bottom: none;
   }
-  .brand .dot { color: var(--accent); }
   nav a {
     color: var(--muted);
     margin-left: 20px;
@@ -86,13 +84,21 @@
   nav a:hover { color: var(--text); border-bottom-color: transparent; }
   @media (max-width: 540px) {
     nav a { margin-left: 14px; font-size: 0.85rem; }
-    nav a.hide-sm { display: none; }
   }
 
   /* Hero */
   section.hero {
     padding: 96px 0 72px;
     border-bottom: 1px solid var(--border);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
   }
   .eyebrow {
     display: inline-block;
@@ -109,12 +115,41 @@
     font-size: 1.15rem;
     color: var(--muted);
     max-width: 640px;
-    margin-bottom: 32px;
+    margin-bottom: 1em;
+  }
+  .hero p.lead:last-child { margin-bottom: 0; }
+  .hero-portrait {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background:
+      linear-gradient(135deg, rgba(201,176,121,0.06) 0%, rgba(201,176,121,0) 60%),
+      var(--bg-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+  .hero-portrait img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+  @media (max-width: 720px) {
+    .hero-portrait { margin-left: 0; max-width: 100%; }
   }
   .cta-row {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    align-items: center;
   }
   .btn {
     display: inline-block;
@@ -148,36 +183,18 @@
     margin-bottom: 14px;
   }
 
-  /* Features grid */
-  .features {
+  /* Featured project (PBS 2D) */
+  .featured {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    margin-top: 28px;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-top: 8px;
   }
-  @media (max-width: 640px) {
-    .features { grid-template-columns: 1fr; }
+  @media (max-width: 720px) {
+    .featured { grid-template-columns: 1fr; gap: 20px; }
   }
-  .feature {
-    padding: 22px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--bg-2);
-  }
-  .feature h3 { margin: 0 0 8px; color: var(--text); }
-  .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-
-  /* Screenshots */
-  .shots {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-    margin-top: 28px;
-  }
-  @media (max-width: 640px) {
-    .shots { grid-template-columns: 1fr; }
-  }
-  .shot {
+  .featured-media {
     aspect-ratio: 16 / 10;
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -188,16 +205,87 @@
     align-items: center;
     justify-content: center;
     color: var(--muted);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     overflow: hidden;
   }
-  .shot img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .featured-media img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .featured-body h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .featured-body .kicker {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .featured-body p { color: var(--muted); }
+
+  /* Other projects grid */
+  .subhead {
+    margin-top: 56px;
+    margin-bottom: 4px;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  @media (max-width: 720px) {
+    .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 480px) {
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+  .project-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-2);
+    overflow: hidden;
     display: block;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    transition: border-color 140ms ease;
+  }
+  .project-card:hover { border-color: var(--accent); }
+  .project-media {
+    aspect-ratio: 4 / 3;
+    background:
+      linear-gradient(135deg, rgba(201,176,121,0.05) 0%, rgba(201,176,121,0) 60%),
+      #0e0e11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .project-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .project-meta { padding: 14px 16px; }
+  .project-title {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.98rem;
+    margin-bottom: 2px;
+  }
+  .project-kind {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
   }
 
   /* Contact */
@@ -242,11 +330,10 @@
 
 <header class="site">
   <div class="wrap">
-    <a href="#" class="brand">RandGameDev<span class="dot">.</span></a>
+    <span class="brand">RandGameDev</span>
     <nav>
       <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#screenshots" class="hide-sm">Preview</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -254,79 +341,69 @@
 
 <main>
 
-  <section class="hero">
+  <section class="hero" id="about">
     <div class="wrap">
-      <span class="eyebrow">Unity Template</span>
-      <h1>PBS 2D</h1>
-      <p class="lead">A physics-based 2D character template for Unity — active ragdoll, procedural locomotion, and a modular weapon system, built for projects that want characters to feel alive.</p>
-      <div class="cta-row">
-        <a href="#features" class="btn primary">See what's inside</a>
-        <a href="#contact" class="btn">Get in touch</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="about">
-    <div class="wrap">
-      <div class="section-label">About the asset</div>
-      <h2>What PBS 2D is</h2>
-      <p>PBS 2D is a starting point for 2D games that rely on physics-driven characters rather than pre-baked animation. Instead of sprite sheets, the character is a chain of rigid bodies connected by joints, balanced by spring forces, and animated through inverse kinematics while conscious — and flipped into a full ragdoll the moment they're not.</p>
-      <p>On top of that lives a complete weapon system: interactable guns with realistic reload and cycling animations, per-frame raycast projectiles that support penetration, and support for self-cycling, bolt-action, and pump-action firearms. Input is routed through Unity's Input System and works out of the box with keyboard &amp; mouse, gamepad, and touch.</p>
-      <p class="muted">It's intended for developers who want a solid, readable foundation to build 2D action, shooter, or physics-puzzle games on top of — not a plug-and-play demo.</p>
-    </div>
-  </section>
-
-  <section class="block" id="features">
-    <div class="wrap">
-      <div class="section-label">Features</div>
-      <h2>What's included</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>Active ragdoll</h3>
-          <p>Characters switch seamlessly between IK-driven control and a physics ragdoll, with balance springs that soften the transition on hit, stun, or death.</p>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1>About me</h1>
+          <p class="lead">I'm a Computer Science student based in Portugal. I've been programming for several years and working with Unity for the last three, building 2D games, tools, and frameworks purely as a hobby in my spare time.</p>
+          <p class="lead">My work tends to focus on 2D physics, procedural animation, and gameplay systems — the kinds of things where tweaking a few variables can change how a whole game feels. Everything on this page is solo, personal work.</p>
         </div>
-        <div class="feature">
-          <h3>Procedural locomotion</h3>
-          <p>Feet are placed dynamically each step using raycast fans and torso-relative targets. Walk, run, and crouch each have their own tuning, and feet step over small obstacles automatically.</p>
-        </div>
-        <div class="feature">
-          <h3>Modular weapon system</h3>
-          <p>Guns inherit from a shared base and use ScriptableObject stats. Self-cycling (auto / semi / burst), bolt-action, and pump-action cycle types are supported out of the box.</p>
-        </div>
-        <div class="feature">
-          <h3>Realistic reload &amp; cycling</h3>
-          <p>Coroutine-driven animations move the off hand through magazine and slide positions with per-gun timing, driven by the same IK rig used for locomotion.</p>
-        </div>
-        <div class="feature">
-          <h3>Multi-device input</h3>
-          <p>Built on Unity's Input System with keyboard &amp; mouse, gamepad, and touch bindings. Aiming supports both world-point (pointer) and direction (stick) modes.</p>
-        </div>
-        <div class="feature">
-          <h3>Data-driven tuning</h3>
-          <p>Weapon stats, audio configs, and effect configs are ScriptableObjects, so balancing and sound design can happen without touching code.</p>
+        <div class="hero-portrait">
+          <img src="bust.png" alt="RandGameDev pixel art avatar">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="block" id="screenshots">
+  <section class="block" id="projects">
     <div class="wrap">
-      <div class="section-label">Preview</div>
-      <h2>In motion</h2>
-      <p class="muted">Screenshots and gameplay clips from the template.</p>
-      <div class="shots">
-        <div class="shot">Screenshot 01</div>
-        <div class="shot">Screenshot 02</div>
-        <div class="shot">Screenshot 03</div>
-      </div>
-    </div>
-  </section>
+      <div class="section-label">Projects</div>
+      <h2>Things I've made</h2>
 
-  <section class="block" id="about-me">
-    <div class="wrap">
-      <div class="section-label">About me</div>
-      <h2>Who's behind it</h2>
-      <p>I'm an independent Unity developer focused on 2D physics, gameplay systems, and the small details that make characters feel responsive. PBS 2D started as the core of a personal project and is being released as a template so other developers can skip the hard setup and get straight to building.</p>
+      <!-- Featured project: PBS 2D -->
+      <div class="featured">
+        <div class="featured-media">
+          <!-- TODO: replace with <img src="images/pbs2d.png" alt="PBS 2D"> -->
+          PBS 2D Preview
+        </div>
+        <div class="featured-body">
+          <div class="kicker">Featured · Unity Framework</div>
+          <h3>PBS 2D</h3>
+          <p>A 2D physics-based shooter framework for Unity. Active ragdoll characters, procedural animations, a full weapon system, and a gore system — designed to be as customizable as possible.</p>
+          <div class="cta-row">
+            <a href="https://randgamedev.itch.io/pbs-2d" target="_blank" rel="noopener" class="btn primary">Try the demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other projects -->
+      <div class="subhead">Other work</div>
+      <div class="projects-grid">
+        <!-- TODO: replace the placeholder title + media in each card below.
+             Wrap each card in <a href="..."> to link to the project's page. -->
+        <div class="project-card">
+          <div class="project-media">Game Title 01</div>
+          <div class="project-meta">
+            <div class="project-title">Game Title 01</div>
+            <div class="project-kind">Game</div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-media">Game Title 02</div>
+          <div class="project-meta">
+            <div class="project-title">Game Title 02</div>
+            <div class="project-kind">Game</div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-media">Artwork</div>
+          <div class="project-meta">
+            <div class="project-title">Artwork</div>
+            <div class="project-kind">Personal artwork</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -334,11 +411,13 @@
     <div class="wrap">
       <div class="section-label">Contact</div>
       <h2>Get in touch</h2>
-      <p class="muted">Questions about the asset, feedback, or support requests are welcome.</p>
+      <p class="muted">Questions, feedback, or just want to say hi? Drop me a line.</p>
       <!-- TODO: replace the email below with your real address before publishing -->
       <a class="contact-email" href="mailto:your.email@example.com">your.email@example.com</a>
       <div class="links">
-        <a href="https://github.com/randgamedev" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://youtube.com/@randgamedev" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://randgamedev.itch.io" target="_blank" rel="noopener">itch.io</a>
+        <a href="https://assetstore.unity.com/publishers/randgamedev" target="_blank" rel="noopener">Unity</a>
       </div>
     </div>
   </section>
