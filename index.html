@@ -195,7 +195,7 @@
     .featured { grid-template-columns: 1fr; gap: 20px; }
   }
   .featured-media {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     border: 1px solid var(--border);
     border-radius: 8px;
     background:
@@ -260,7 +260,7 @@
   }
   .project-card:hover { border-color: var(--accent); }
   .project-media {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     background:
       linear-gradient(135deg, rgba(201,176,121,0.05) 0%, rgba(201,176,121,0) 60%),
       #0e0e11;
@@ -364,8 +364,7 @@
       <!-- Featured project: PBS 2D -->
       <div class="featured">
         <div class="featured-media">
-          <!-- TODO: replace with <img src="images/pbs2d.png" alt="PBS 2D"> -->
-          PBS 2D Preview
+          <img src="pbs.png" alt="PBS 2D">
         </div>
         <div class="featured-body">
           <div class="kicker">Featured · Unity Framework</div>
@@ -373,6 +372,7 @@
           <p>A 2D physics-based shooter framework for Unity. Active ragdoll characters, procedural animations, a full weapon system, and a gore system — designed to be as customizable as possible.</p>
           <div class="cta-row">
             <a href="https://randgamedev.itch.io/pbs-2d" target="_blank" rel="noopener" class="btn primary">Try the demo</a>
+            <a href="https://assetstore.unity.com/packages/tools/pbs-2d" target="_blank" rel="noopener" class="btn">Get the asset</a>
           </div>
         </div>
       </div>
@@ -383,24 +383,24 @@
         <!-- TODO: replace the placeholder title + media in each card below.
              Wrap each card in <a href="..."> to link to the project's page. -->
         <div class="project-card">
-          <div class="project-media">Game Title 01</div>
+          <div class="project-media"><img src="ss1.png" alt="Game Title 01 screenshot"></div>
           <div class="project-meta">
             <div class="project-title">Game Title 01</div>
             <div class="project-kind">Game</div>
           </div>
         </div>
         <div class="project-card">
-          <div class="project-media">Game Title 02</div>
+          <div class="project-media"><img src="ss2.png" alt="Game Title 02 screenshot"></div>
           <div class="project-meta">
             <div class="project-title">Game Title 02</div>
             <div class="project-kind">Game</div>
           </div>
         </div>
         <div class="project-card">
-          <div class="project-media">Artwork</div>
+          <div class="project-media"><img src="ss3.png" alt="Game Title 03 screenshot"></div>
           <div class="project-meta">
-            <div class="project-title">Artwork</div>
-            <div class="project-kind">Personal artwork</div>
+            <div class="project-title">Game Title 03</div>
+            <div class="project-kind">Game</div>
           </div>
         </div>
       </div>
