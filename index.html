@@ -213,6 +213,9 @@
   .featured-media img {
     width: 100%; height: 100%; object-fit: cover; display: block;
   }
+  .featured-media iframe {
+    width: 100%; height: 100%; display: block; border: 0;
+  }
   .featured-body h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
@@ -345,7 +348,7 @@
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-text">
-          <h1>ABOUT ME</h1>
+          <h1>About me</h1>
           <p class="lead">Hi! I'm André, I'm a Computer Science student from Portugal. I've been programming for several years and working with Unity for the last three, building games, tools and systems as a hobby in my spare time.</p>
           <p class="lead">Lately, I've taken a big interest in 2D physics and procedural animations, so much so that I decided to launch my first commercial project, PBS 2D! Read more down below.</p>
         </div>
@@ -359,12 +362,17 @@
   <section class="block" id="projects">
     <div class="wrap">
       <div class="section-label">Projects</div>
-      <h2>Portfolio</h2>
+      <h2>What I've done</h2>
 
       <!-- Featured project: PBS 2D -->
       <div class="featured">
         <div class="featured-media">
-          <img src="pbs.png" alt="PBS 2D">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/bwTlylTpIas?rel=0"
+            title="PBS 2D demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
         <div class="featured-body">
           <div class="kicker">Featured · Game Template</div>
@@ -372,7 +380,9 @@
           <p>A 2D physics-based shooter framework for Unity. Active ragdoll characters, procedural animations, a full weapon system and a gore system. Designed to be as customizable as possible.</p>
           <div class="cta-row">
             <a href="https://randgamedev.itch.io/pbs-2d" target="_blank" rel="noopener" class="btn primary">Try the demo</a>
+            <!-- TODO: re-enable once the Unity Asset Store listing is live
             <a href="https://assetstore.unity.com/packages/tools/pbs-2d" target="_blank" rel="noopener" class="btn primary">Get the asset</a>
+            -->
           </div>
         </div>
       </div>
@@ -384,22 +394,22 @@
         <div class="project-card">
           <div class="project-media"><img src="ss1.png" alt="Lawnmower Incremental screenshot"></div>
           <div class="project-meta">
-            <div class="project-title">Lawnmower Incremental</div>
-            <div class="project-kind">2023 - My first project, a 3D simple incremental game about cutting grass inpired by Leaf Blower Revolution.</div>
+            <div class="project-title">2023 Lawnmower Incremental</div>
+            <div class="project-kind">My first project, a 3D simple incremental game about cutting grass inpired by Leaf Blower Revolution.</div>
           </div>
         </div>
         <div class="project-card">
           <div class="project-media"><img src="ss2.png" alt="Solar Defense screenshot"></div>
           <div class="project-meta">
-            <div class="project-title">Solar Defense</div>
-            <div class="project-kind">2024 - A roguelike game inspired by brotato where you defend the sun using planets instead of weapons.</div>
+            <div class="project-title">2024 Solar Defense</div>
+            <div class="project-kind">A roguelike game inspired by brotato where you defend the sun using planets instead of weapons.</div>
           </div>
         </div>
         <div class="project-card">
           <div class="project-media"><img src="ss3.png" alt="Hivemind screenshot"></div>
           <div class="project-meta">
-            <div class="project-title">Hivemind</div>
-            <div class="project-kind">2025 - A survivors-like game prototype, where instead of upgrades, you got mutations based on your playstyle.</div>
+            <div class="project-title">2025 Hivemind</div>
+            <div class="project-kind">A survivors-like game prototype, where instead of upgrades, you got mutations based on your playstyle.</div>
           </div>
         </div>
       </div>
@@ -415,7 +425,9 @@
       <div class="links">
         <a href="https://www.youtube.com/@RandGameDev" target="_blank" rel="noopener">YouTube</a>
         <a href="https://randgamedev.itch.io/" target="_blank" rel="noopener">itch</a>
+        <!-- TODO: re-enable once the Unity Asset Store publisher page is live
         <a href="https://assetstore.unity.com/publishers/randgamedev" target="_blank" rel="noopener">Unity</a>
+        -->
       </div>
     </div>
   </section>
